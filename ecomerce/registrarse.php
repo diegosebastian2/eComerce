@@ -1,35 +1,9 @@
-<?php
-
-include("printProductosHome.php");
-
-session_start();
-
-if (isset($_SESSION['usuario'])) {
-    $links = '';
-
-    $nombre = $_SESSION['usuario'];
-
-    $links .= "<span>Bienvenido $nombre </span>";
-    $links .= "<a class='p-1 links' href='cerrarSesion.php'>Cerrar Sesion</a>";
-    $links .= "<a class='p-1 links' href='misCompras.php'>Mis compras</a>";
-    
-
-} else {
-    $links = '<a class="p-1 links" href="log.php">Log?</a>';
-}
-
-
-?>
-
-
-
-
 <!doctype html>
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Home - ecomerce</title>
+        <title>Logging</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -44,39 +18,43 @@ if (isset($_SESSION['usuario'])) {
         <link rel="stylesheet" href="css/custom.css">
     </head>
     <body>
-    <div id="content" class="content">
-        <div id="log">
-            <?php echo $links; ?>
-        </div>
-        <div class="containter-fluid menu">
-            <ul class="nav nav-fill">
-              <li><a class="nav-link" href="#">Ofertas</a></li>
-              <li><a class="nav-link" href="#">Sucursales</a></li>
-              <li><a class="nav-link" href="#">Contacto</a></li>
-            </ul>
-        </div>
-        <div class="containter-fluid menu">
-            <ul class="nav nav-fill">
-              <li><a class="nav-link" href="catalogo.php?categoria_id=1&categoria=Televisores">Televisores</a></li>
-              <li><a class="nav-link" href="catalogo.php?categoria_id=2&categoria=Notebooks">Notebooks</a></li>
-              <li><a class="nav-link" href="catalogo.php?categoria_id=6&categoria=Heladeras">Heladeras</a></li>
-              <li><a class="nav-link" href="catalogo.php?categoria_id=3&categoria=Lavarropas">Lavarropas</a></li>
-              <li><a class="nav-link" href="catalogo.php?categoria_id=4&categoria=Consolas">Consolas</a></li>
-            </ul>
-        </div>
+  
+    <div id="home">
+      <a class="p-1 links" href="index.php">Home</a>
 
-        <div id="productos">
-            <div class="row">
-                <?php 
-                    echo $bloque;
-                ?>
+              <div class="container">
+                       <form class="container" method="POST" action="registrarseW.php" id="formulario">
+                        <div class="form-group">
+                          <label for="usuario">Email</label>
+                          <input type="Email" name="email" class="form-control" id="email" placeholder="Ingresar email ">
+                        </div>
+                        <div class="form-group">
+                          <label for="nombre">Nombre</label>
+                          <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingresar nombre ">
+                        </div>                        
+                        <div class="form-group">
+                          <label for="Password">Password</label>
+                          <input type="password" name="password" class="form-control" id="Password" placeholder="Password">
+                        </div>
+                        <div class="pt-4">
+                          <button type="button" id="btn_reg" class="btn">Registrarme!</button>
+                        </div>
+                      </form>
 
-            </div>
-              
+                       <div id="resultado">
+                       </div>
+                  </div>
 
-        </div>
 
     </div>
+    <!-- Footer -->
+    <footer class="container-fluid">
+      <div class="container p-0">
+        <p class="m-0 text-center text-white small py-2">Copyright &copy; Your Website 2018</p>
+        
+      </div>
+      <!-- /.container -->
+    </footer>
         
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -92,8 +70,22 @@ if (isset($_SESSION['usuario'])) {
 
         <script>
         $(document).ready(function(){
-            $('div.infoDetalle').attr("data-scroll");
                 
+
+
+                $('#btn_reg').click(function(){
+
+                  $.ajax({
+                    method: "POST",
+                    url: "registrarseW.php",
+                    data: $('#formulario').serialize()
+
+                  })
+                    .done(function( msg ) {
+                      $('#resultado').html(msg);
+                    });
+                });
+
 
         });
 

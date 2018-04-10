@@ -1,6 +1,6 @@
 <?php
 
-include("printProductosHome.php");
+include("printProductosCatalogo.php");
 
 session_start();
 
@@ -11,7 +11,7 @@ if (isset($_SESSION['usuario'])) {
 
     $links .= "<span>Bienvenido $nombre </span>";
     $links .= "<a class='p-1 links' href='cerrarSesion.php'>Cerrar Sesion</a>";
-    $links .= "<a class='p-1 links' href='misCompras.php'>Mis compras</a>";
+    $links .= "<a class='p-1 links' href='compras.php'>Mis compras</a>";
     
 
 } else {
@@ -55,14 +55,10 @@ if (isset($_SESSION['usuario'])) {
               <li><a class="nav-link" href="#">Contacto</a></li>
             </ul>
         </div>
-        <div class="containter-fluid menu">
-            <ul class="nav nav-fill">
-              <li><a class="nav-link" href="catalogo.php?categoria_id=1&categoria=Televisores">Televisores</a></li>
-              <li><a class="nav-link" href="catalogo.php?categoria_id=2&categoria=Notebooks">Notebooks</a></li>
-              <li><a class="nav-link" href="catalogo.php?categoria_id=6&categoria=Heladeras">Heladeras</a></li>
-              <li><a class="nav-link" href="catalogo.php?categoria_id=3&categoria=Lavarropas">Lavarropas</a></li>
-              <li><a class="nav-link" href="catalogo.php?categoria_id=4&categoria=Consolas">Consolas</a></li>
-            </ul>
+        <div>
+            <h2>
+                <?php echo $categoria; ?>
+            </h2>
         </div>
 
         <div id="productos">

@@ -1,17 +1,14 @@
 <?php
 
-include("printProductosHome.php");
-
-session_start();
+include("printCompras.php");
 
 if (isset($_SESSION['usuario'])) {
     $links = '';
 
     $nombre = $_SESSION['usuario'];
 
-    $links .= "<span>Bienvenido $nombre </span>";
     $links .= "<a class='p-1 links' href='cerrarSesion.php'>Cerrar Sesion</a>";
-    $links .= "<a class='p-1 links' href='misCompras.php'>Mis compras</a>";
+    $links .= "<a class='p-1 links' href='index.php'>Home</a>";
     
 
 } else {
@@ -55,23 +52,26 @@ if (isset($_SESSION['usuario'])) {
               <li><a class="nav-link" href="#">Contacto</a></li>
             </ul>
         </div>
-        <div class="containter-fluid menu">
-            <ul class="nav nav-fill">
-              <li><a class="nav-link" href="catalogo.php?categoria_id=1&categoria=Televisores">Televisores</a></li>
-              <li><a class="nav-link" href="catalogo.php?categoria_id=2&categoria=Notebooks">Notebooks</a></li>
-              <li><a class="nav-link" href="catalogo.php?categoria_id=6&categoria=Heladeras">Heladeras</a></li>
-              <li><a class="nav-link" href="catalogo.php?categoria_id=3&categoria=Lavarropas">Lavarropas</a></li>
-              <li><a class="nav-link" href="catalogo.php?categoria_id=4&categoria=Consolas">Consolas</a></li>
-            </ul>
-        </div>
 
-        <div id="productos">
-            <div class="row">
-                <?php 
-                    echo $bloque;
-                ?>
+        <div id="compras">
+                  <div class="col-lg-6 order-lg-1 p-4 text-center">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Producto</th>
+                          <th scope="col">Cantidad</th>
+                          <th scope="col">Monto</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <?php 
+                          echo $bloque;
 
-            </div>
+                       ?>
+                        </tbody>
+                      </table>
+                    </div>
               
 
         </div>

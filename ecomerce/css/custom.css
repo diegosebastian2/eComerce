@@ -24,6 +24,21 @@ h6 {
 }
 
 
+div div div.block{
+	display: block;
+}
+
+div div img.grilla{
+  width: 100%;
+  height: 300px;
+}
+
+div div div div div.infoDetalle{
+	display: none;
+	width: 70vw;
+}
+
+
 
 
 @media (max-width: 575.98px) {

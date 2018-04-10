@@ -10,93 +10,93 @@ INSERT INTO `productos`(
 )
 VALUES(
 
-    'whirpool Modelo 1',
+    'PlayStation 4',
     '',
     '',
     '3000',
     '',
-    '1',
+    '4',
     '1',
     '1'
 ),(
-    'whirpool Modelo 2',
+    'Xbox One',
     '',
     '',
     '4000',
     '',
-    '1',
+    '4',
     '1',
     '1'
 ),(
-    'whirpool Modelo 3',
+    'Nintendo Switch',
     '',
     '',
     '5000',
     '',
-    '1',
+    '4',
     '1',
     '1'
 ),(
-    'whirpool Modelo 4',
+    'Heladera Samsung 1',
     '',
     '',
     '6000',
     '',
-    '1',
+    '6',
     '1',
     '1'
 ),(
-    'Philips Modelo 1',
+    'Heladera Gafa 1',
     '',
     '',
     '4500',
     '',
-    '1',
+    '6',
     '1',
     '1'
 ),(
-    'Philips Modelo 2',
+    'Notebook Bagoo 1',
     '',
     '',
     '3500',
     '',
-    '1',
-    '1',
-    '1'
-),(
-    'Philips Modelo 3',
-    '',
-    '',
-    '2750',
-    '',
-    '1',
+    '2',
     '1',
     '1'
 ),(
-    'Hitachi Modelo 1',
+    'Notebook Sony 1',
+    '',
+    '',
+    '8000',
+    '',
+    '2',
+    '1',
+    '1'
+),(
+    'Notebook HP 1',
     '',
     '',
     '4600',
     '',
-    '1',
+    '2',
     '1',
     '1'
 ),(
-    'Hitachi Modelo 2',
+    'Notebook HP 2',
     '',
     '',
     '6000',
     '',
-    '1',
+    '3',
     '1',
     '1'
 ),(
-    'Hitachi Modelo 3',
+    'Notebook HP 3',
     '',
     '',
     '1500',
     '',
-    '1',
+    '3',
     '1',
     '1'
 )
